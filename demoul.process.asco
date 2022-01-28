@@ -1,0 +1,31 @@
+@proc_def simplecurve($name, $in, $value, $dur, $out)
+{
+	curve C 
+	@action := { @command($name) $a } 
+	@grain := 0.1s
+	{
+		$a
+		{
+			{-80}
+			$in s {$value } 
+			$dur s {$value} 
+			$out s {-80}
+		}
+	}
+}
+
+@proc_def spatcurve($name, $in, $value, $dur, $out)
+{
+	curve C 
+	@action := { spat $name $a } 
+	@grain := 0.1s
+	{
+		$a
+		{
+			{-80}
+			$in s {$value } 
+			$dur s {$value} 
+			$out s {-80}
+		}
+	}
+}
